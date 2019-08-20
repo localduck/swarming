@@ -16,5 +16,9 @@ def draw():
     #everytime call event
     background(30,30,47)
 
+    for boid in flock:
+        boid.show()
+        boid.update()
+
 #calling: setup(),d draw() ...
 run()
