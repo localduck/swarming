@@ -5,7 +5,7 @@ from boid import Boid
 width = 1000
 heigth = 1000
 
-flock = [Boid(*np.random.rand(2)*1000, width,heigth) for _ in range(30)]
+flock = [Boid(*np.random.rand(2)*1000, width,heigth) for _ in range(20)]
 
 def setup():
     #once call at RUN
@@ -18,7 +18,9 @@ def draw():
 
     for boid in flock:
         boid.show()
+        boid.behavir_commit(flock)
         boid.update()
+        boid.edges()
 
-#calling: setup(),d draw() ...
+#p5 calling: setup(),d draw() ...
 run()
